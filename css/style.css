@@ -380,6 +380,58 @@ h3 {
   gap: 40px;
 }
 
+/* Detailed approach section (two-column layout) */
+.approach-detail {
+  background: var(--sable-clair);
+}
+
+.approach-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: center;
+}
+
+.approach-detail-text h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 12px;
+  color: var(--indigo);
+}
+
+.approach-detail-text p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+.approach-features .feature {
+  border-left: 4px solid var(--vert-baobab);
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.approach-features h3 {
+  margin-bottom: 6px;
+  color: var(--indigo);
+}
+
+.approach-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+  .approach-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .approach-detail-image {
+    order: -1;
+  }
+}
+
 .approach-card {
   text-align: center;
   padding: 40px 24px;
