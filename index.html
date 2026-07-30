@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabinet d'Architecture | Réalisations et Devis</title>
+    <meta
+      name="description"
+      content="Cabinet d'architecture spécialisé dans la construction, rénovation et extension. Découvrez nos réalisations et demandez un devis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="logo">
+          <img
+            src="images/Indigo.png"
+            alt="Logo Indigo Architecture"
+            class="logo-img"
+          />
+          <span class="logo-text"
+            >Architecture<span class="logo-accent">Studio</span></span
+          >
+        </a>
+        <button class="menu-toggle" aria-label="Menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="temoignages.html">Témoignages</a></li>
+          <li><a href="devis.html" class="btn-nav">Demander un devis</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content container">
+          <div class="hero-text">
+            <span class="hero-tag">Cabinet d'architecture</span>
+            <h1>
+              Construire l'harmonie entre
+              <span class="highlight">terre</span> et
+              <span class="highlight">vision</span>
+            </h1>
+            <p>
+              Nous donnons vie à vos projets architecturaux avec une approche
+              ancrée dans les matériaux et la lumière naturelle du Sénégal.
+            </p>
+            <div class="hero-actions">
+              <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+              <a href="realisations.html" class="btn btn-secondary"
+                >Voir nos réalisations</a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80"
+              alt="Projet architectural phare"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="hero-pattern"></div>
+      </section>
+
+      <!-- Notre démarche -->
+      <section class="approach section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Notre approche</span>
+            <h2>
+              Une architecture qui <span class="highlight">raconte</span> une
+              histoire
+            </h2>
+            <p>
+              Chaque projet est une rencontre entre votre vision et notre
+              expertise, façonnée par les matériaux et la lumière du Sénégal.
+            </p>
+          </div>
+          <div class="approach-grid">
+            <div class="approach-card">
+              <div class="approach-icon">🌍</div>
+              <h3>Ancrée localement</h3>
+              <p>
+                Nous puisons notre inspiration dans les matériaux locaux, la
+                lumière naturelle et les savoir-faire artisanaux sénégalais.
+              </p>
+            </div>
+            <div class="approach-card">
+              <div class="approach-icon">🎨</div>
+              <h3>Design sur mesure</h3>
+              <p>
+                Chaque projet est unique, conçu en étroite collaboration avec
+                vous pour refléter vos besoins et votre personnalité.
+              </p>
+            </div>
+            <div class="approach-card">
+              <div class="approach-icon">♻️</div>
+              <h3>Architecture durable</h3>
+              <p>
+                Nous intégrons des solutions écologiques et durables qui
+                respectent l'environnement et réduisent l'empreinte carbone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projets mis en avant -->
+      <section class="featured-projects section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Nos réalisations</span>
+            <h2>Projets <span class="highlight">phares</span></h2>
+          </div>
+          <div class="projects-grid" id="featured-projects">
+            <!-- Les projets seront chargés dynamiquement via JavaScript -->
+          </div>
+          <div class="section-actions">
+            <a href="realisations.html" class="btn btn-primary"
+              >Voir tous les projets</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Témoignages -->
+      <section class="testimonials section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Témoignages</span>
+            <h2>Ce que disent nos <span class="highlight">clients</span></h2>
+          </div>
+          <div class="testimonials-grid" id="testimonials-home">
+            <!-- Les témoignages seront chargés dynamiquement -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Devis -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Prêt à concrétiser votre projet ?</h2>
+            <p>
+              Contactez-nous pour une première discussion gratuite et obtenez un
+              devis personnalisé.
+            </p>
+            <a href="devis.html" class="btn btn-primary btn-large"
+              >Demander un devis</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="logo">
+              <img
+                src="images/Indigo.png"
+                alt="Logo Indigo Architecture"
+                class="logo-img"
+              />
+              <span class="logo-text"
+                >Architecture<span class="logo-accent">Studio</span></span
+              >
+            </a>
+            <p>
+              Un cabinet d'architecture ancré dans les matériaux et la lumière
+              du Sénégal.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="a-propos.html">À propos</a></li>
+              <li><a href="realisations.html">Réalisations</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="temoignages.html">Témoignages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="devis.html">Construction neuve</a></li>
+              <li><a href="devis.html">Rénovation</a></li>
+              <li><a href="devis.html">Extension</a></li>
+              <li><a href="devis.html">Conception</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>📍 Dakar, Sénégal</li>
+              <li>📞 +221 77 123 45 67</li>
+              <li>✉️ contact@architecturesenegal.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Architecture Studio. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data/projets.js"></script>
+    <script src="data/temoignages.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

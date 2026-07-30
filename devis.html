@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demande de devis | Cabinet d'Architecture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="logo">
+          <img
+            src="images/Indigo.png"
+            alt="Logo Indigo Architecture"
+            class="logo-img"
+          />
+          <span class="logo-text"
+            >Architecture<span class="logo-accent">Studio</span></span
+          >
+        </a>
+        <button class="menu-toggle" aria-label="Menu">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="temoignages.html">Témoignages</a></li>
+          <li><a href="devis.html" class="btn-nav">Demander un devis</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Demandez un devis</h1>
+          <p>
+            Remplissez ce formulaire et nous vous répondrons dans les plus brefs
+            délais.
+          </p>
+        </div>
+      </section>
+
+      <section class="devis section-padding">
+        <div class="container">
+          <div class="devis-grid">
+            <div class="devis-form-wrapper">
+              <form id="devis-form" class="devis-form">
+                <div class="form-group">
+                  <label for="nom">Nom complet *</label>
+                  <input type="text" id="nom" name="nom" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="telephone">Téléphone *</label>
+                  <input type="tel" id="telephone" name="telephone" required />
+                </div>
+                <div class="form-group">
+                  <label for="type-projet">Type de projet *</label>
+                  <select id="type-projet" name="type-projet" required>
+                    <option value="">Sélectionnez un type</option>
+                    <option value="construction-neuve">
+                      Construction neuve
+                    </option>
+                    <option value="renovation">Rénovation</option>
+                    <option value="extension">Extension</option>
+                    <option value="conception">Conception</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget estimatif</label>
+                  <select id="budget" name="budget">
+                    <option value="">Sélectionnez une fourchette</option>
+                    <option value="moins-50k">Moins de 50 000 €</option>
+                    <option value="50k-100k">50 000 - 100 000 €</option>
+                    <option value="100k-200k">100 000 - 200 000 €</option>
+                    <option value="200k-500k">200 000 - 500 000 €</option>
+                    <option value="plus-500k">Plus de 500 000 €</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="description">Description du projet *</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                    required
+                    placeholder="Décrivez votre projet, vos besoins et vos idées..."
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="fichier"
+                    >Joindre un fichier (plans, photos...)</label
+                  >
+                  <input
+                    type="file"
+                    id="fichier"
+                    name="fichier"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                  Envoyer la demande
+                </button>
+              </form>
+              <div
+                id="devis-confirmation"
+                class="devis-confirmation"
+                style="display: none"
+              >
+                <div class="confirmation-icon">✓</div>
+                <h3>Demande envoyée !</h3>
+                <p>
+                  Merci pour votre demande. Nous vous contacterons dans les plus
+                  brefs délais pour discuter de votre projet.
+                </p>
+              </div>
+            </div>
+            <div class="devis-info">
+              <h3>Pourquoi nous choisir ?</h3>
+              <ul>
+                <li>✓ Une réponse sous 24h</li>
+                <li>✓ Une première consultation gratuite</li>
+                <li>✓ Des projets sur mesure</li>
+                <li>✓ Une expertise locale reconnue</li>
+                <li>✓ Des matériaux durables et de qualité</li>
+              </ul>
+              <div class="devis-contact">
+                <h4>Vous préférez nous appeler ?</h4>
+                <p><strong>📞 +221 77 123 45 67</strong></p>
+                <p>Du lundi au vendredi, 9h - 18h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="logo">
+              <img
+                src="images/Indigo.png"
+                alt="Logo Indigo Architecture"
+                class="logo-img"
+              />
+              <span class="logo-text"
+                >Architecture<span class="logo-accent">Studio</span></span
+              >
+            </a>
+            <p>
+              Un cabinet d'architecture ancré dans les matériaux et la lumière
+              du Sénégal.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="a-propos.html">À propos</a></li>
+              <li><a href="realisations.html">Réalisations</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="temoignages.html">Témoignages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="devis.html">Construction neuve</a></li>
+              <li><a href="devis.html">Rénovation</a></li>
+              <li><a href="devis.html">Extension</a></li>
+              <li><a href="devis.html">Conception</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>📍 Dakar, Sénégal</li>
+              <li>📞 +221 77 123 45 67</li>
+              <li>✉️ contact@architecturesenegal.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Architecture Studio. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/devis.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
