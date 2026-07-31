@@ -298,7 +298,18 @@ h3 {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--sable-clair);
+  background-color: var(--sable-clair);
+  background-image:
+    linear-gradient(
+      100deg,
+      rgba(242, 232, 213, 0.97) 0%,
+      rgba(242, 232, 213, 0.92) 28%,
+      rgba(242, 232, 213, 0.55) 62%,
+      rgba(242, 232, 213, 0.2) 100%
+    ),
+    url("https://images.unsplash.com/photo-1770932537112-a7b24b062bf2?w=1800&q=70&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content {
@@ -371,7 +382,13 @@ h3 {
    Approach
    ============================ */
 .approach {
-  background: var(--blanc);
+  position: relative;
+  background-color: var(--blanc);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("https://images.unsplash.com/photo-1623490879046-75abc98e1176?w=1800&q=70&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
 .approach-grid {
@@ -390,6 +407,15 @@ h3 {
   grid-template-columns: 1fr 420px;
   gap: 48px;
   align-items: center;
+}
+
+.approach-detail-image img {
+  width: 200%;
+  height: 500px; /* Fixe une hauteur homogène pour éviter qu'elle ne soit trop haute */
+  object-fit: cover; /* S'assure que l'image ne soit pas déformée */
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .approach-detail-text h2 {
@@ -465,6 +491,12 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 32px;
+}
+
+.section-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
 }
 
 .project-card {
@@ -899,10 +931,38 @@ h3 {
   background: var(--sable-clair);
   padding: 24px;
   border-radius: 8px;
+  margin-bottom: 24px;
 }
 
 .devis-contact h4 {
   margin-bottom: 8px;
+}
+
+.devis-map-card {
+  background: var(--sable-clair);
+  border: 1px solid rgba(103, 71, 40, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.devis-map-card h4 {
+  margin: 0;
+  padding: 20px 20px 12px;
+}
+
+.devis-map-card iframe {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  display: block;
+}
+
+.devis-map-card p {
+  margin: 0;
+  padding: 16px 20px 20px;
+  color: #555;
+  font-weight: 500;
 }
 
 .form-group {
