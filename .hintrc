@@ -12,6 +12,14 @@
           "backdrop-filter"
         ]
       }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[referrerpolicy=no-referrer-when-downgrade]"
+        ]
+      }
     ]
   }
 }
