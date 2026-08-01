@@ -152,7 +152,7 @@ const articles = [
     date: "9 novembre 2025",
     tempsLecture: "5 min",
     image:
-      "https://images.unsplash.com/photo-1562771382-0a2b0d8d55d4?w=600&h=400&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
     excerpt:
       "Les nouvelles constructions scolaires à Thiès démontrent qu'une architecture publique peut être à la fois fonctionnelle, lumineuse et profondément sensible au climat.",
     content: `
