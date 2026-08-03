@@ -43,17 +43,43 @@
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
-          <h1>Blog</h1>
-          <p>
-            Découvrez nos articles sur l'architecture, la rénovation et les
-            tendances du design.
+      <section class="blog-hero" aria-label="Hero du blog Indigo Studio">
+        <img
+          src="images/img3.png"
+          alt="Chantier d'architecture premium"
+          class="blog-hero-image"
+        />
+        <div class="blog-hero-overlay"></div>
+
+        <div class="container blog-hero-content">
+          <span class="hero-badge">BLOG</span>
+          <h1 class="blog-hero-title">
+            Construire aujourd’hui,<br />
+            <span class="text-cream">imaginer</span> demain.
+          </h1>
+          <p class="blog-hero-text">
+            Découvrez nos analyses, conseils et inspirations sur l’architecture,
+            la construction, la rénovation et le design contemporain.
           </p>
+          <div class="blog-hero-actions">
+            <a href="#blog-grid" class="btn btn-primary">
+              Lire les articles <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href="realisations.html"
+              class="btn btn-secondary hero-secondary"
+            >
+              Découvrir nos réalisations <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-label="Défiler vers les articles">
+          <span class="scroll-mouse"></span>
         </div>
       </section>
 
-      <section class="blog section-padding">
+      <section class="blog section-padding" id="blog-grid-section">
         <div class="container">
           <div class="blog-grid" id="blog-grid">
             <!-- Les articles seront chargés dynamiquement -->
