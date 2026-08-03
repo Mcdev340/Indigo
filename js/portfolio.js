@@ -1,30 +1,30 @@
 // ============================
 // Portfolio - Filtres et affichage
 // ============================
-document.addEventListener('DOMContentLoaded', function() {
-    const portfolioGrid = document.getElementById('portfolio-grid');
-    if (!portfolioGrid) return;
-    
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    let currentFilter = 'all';
-    
-    function renderProjects(categorie) {
-        const projetsFiltres = getProjetsByCategorie(categorie);
-        portfolioGrid.innerHTML = '';
-        
-        if (projetsFiltres.length === 0) {
-            portfolioGrid.innerHTML = `
+document.addEventListener("DOMContentLoaded", function () {
+  const portfolioGrid = document.getElementById("portfolio-grid");
+  if (!portfolioGrid) return;
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  let currentFilter = "all";
+
+  function renderProjects(categorie) {
+    const projetsFiltres = getProjetsByCategorie(categorie);
+    portfolioGrid.innerHTML = "";
+
+    if (projetsFiltres.length === 0) {
+      portfolioGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
                     <p>Aucun projet dans cette catégorie pour le moment.</p>
                 </div>
             `;
-            return;
-        }
-        
-        projetsFiltres.forEach(projet => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.innerHTML = `
+      return;
+    }
+
+    projetsFiltres.forEach((projet) => {
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.innerHTML = `
                 <a href="projet-detail.html?slug=${projet.slug}">
                     <div class="project-card-image">
                         <img src="${projet.image}" alt="${projet.titre}" loading="lazy">
@@ -36,44 +36,49 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </a>
             `;
-            portfolioGrid.appendChild(card);
-        });
-    }
-    
-    // Filtrage
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            currentFilter = this.dataset.filter;
-            renderProjects(currentFilter);
-        });
+      portfolioGrid.appendChild(card);
     });
-    
-    // Chargement initial
-    renderProjects('all');
-    
-    // ============================
-    // Détail d'un projet (projet-detail.html)
-    // ============================
-    const projectDetail = document.getElementById('project-detail');
-    if (projectDetail) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const slug = urlParams.get('slug');
-        
-        if (slug) {
-            const projet = getProjetBySlug(slug);
-            if (projet) {
-                // Récupération des images
-                const imagesHtml = projet.images && projet.images.length > 0 
-                    ? projet.images.map(img => `
+  }
+
+  // Filtrage
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+      currentFilter = this.dataset.filter;
+      renderProjects(currentFilter);
+    });
+  });
+
+  // Chargement initial
+  renderProjects("all");
+
+  // ============================
+  // Détail d'un projet (projet-detail.html)
+  // ============================
+  const projectDetail = document.getElementById("project-detail");
+  if (projectDetail) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+
+    if (slug) {
+      const projet = getProjetBySlug(slug);
+      if (projet) {
+        // Récupération des images
+        const imagesHtml =
+          projet.images && projet.images.length > 0
+            ? projet.images
+                .map(
+                  (img) => `
                         <div class="gallery-item" onclick="openLightbox('${img}')">
                             <img src="${img}" alt="${projet.titre}" loading="lazy">
                         </div>
-                    `).join('')
-                    : `<p>Aucune image supplémentaire disponible.</p>`;
-                
-                projectDetail.innerHTML = `
+                    `,
+                )
+                .join("")
+            : `<p>Aucune image supplémentaire disponible.</p>`;
+
+        projectDetail.innerHTML = `
                     <div class="container">
                         <div class="project-header">
                             <div class="project-hero-image">
@@ -115,36 +120,98 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `;
-            } else {
-                projectDetail.innerHTML = `
+        // after rendering, wire lightbox controls for this project
+        (function () {
+          const projectGalleryEl = projectDetail.querySelector(
+            ".project-gallery .gallery-grid",
+          );
+          const projectImages = projet.images || [];
+          let currentIdx = 0;
+
+          if (projectGalleryEl) {
+            const thumbs = projectGalleryEl.querySelectorAll("img");
+            thumbs.forEach((imgEl, i) => {
+              imgEl.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentIdx = i;
+                openLightbox(projectImages[currentIdx]);
+              });
+            });
+          }
+
+          // attach lightbox controls
+          const lb = document.getElementById("lightbox");
+          const lbImg = document.getElementById("lightbox-image");
+          const lbClose = document.getElementById("lightbox-close");
+          const lbPrev = document.getElementById("lightbox-prev");
+          const lbNext = document.getElementById("lightbox-next");
+
+          function showIdx(idx) {
+            if (!lbImg) return;
+            currentIdx = (idx + projectImages.length) % projectImages.length;
+            lbImg.src = projectImages[currentIdx];
+          }
+
+          if (lbClose) lbClose.addEventListener("click", closeLightbox);
+          if (lbPrev)
+            lbPrev.addEventListener("click", (e) => {
+              e.stopPropagation();
+              showIdx(currentIdx - 1);
+            });
+          if (lbNext)
+            lbNext.addEventListener("click", (e) => {
+              e.stopPropagation();
+              showIdx(currentIdx + 1);
+            });
+
+          document.addEventListener("keydown", (e) => {
+            if (!lb || !lb.classList.contains("active")) return;
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowLeft") showIdx(currentIdx - 1);
+            if (e.key === "ArrowRight") showIdx(currentIdx + 1);
+          });
+
+          // expose helpers for debugging
+          window._projectLightbox = { showIdx };
+        })();
+      } else {
+        projectDetail.innerHTML = `
                     <div class="container" style="text-align:center;padding:80px 0;">
                         <h2>Projet non trouvé</h2>
                         <p>Le projet que vous recherchez n'existe pas.</p>
                         <a href="realisations.html" class="btn btn-primary" style="margin-top:20px;">Voir tous les projets</a>
                     </div>
                 `;
-            }
-        } else {
-            projectDetail.innerHTML = `
+      }
+    } else {
+      projectDetail.innerHTML = `
                 <div class="container" style="text-align:center;padding:80px 0;">
                     <h2>Aucun projet sélectionné</h2>
                     <p>Veuillez sélectionner un projet depuis la liste des réalisations.</p>
                     <a href="realisations.html" class="btn btn-primary" style="margin-top:20px;">Voir tous les projets</a>
                 </div>
             `;
-        }
     }
+  }
 });
 
 // ============================
 // Fonction pour ouvrir la lightbox (globale)
 // ============================
 function openLightbox(imageSrc) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    if (lightbox && lightboxImage) {
-        lightboxImage.src = imageSrc;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  if (lightbox && lightboxImage) {
+    lightboxImage.src = imageSrc;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 }

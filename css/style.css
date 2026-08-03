@@ -1011,6 +1011,57 @@ h3 {
   gap: 36px;
 }
 
+/* Projet detail conversion block */
+.project-conversion .conversion-card,
+.conversion-card {
+  background: linear-gradient(
+    135deg,
+    rgba(242, 232, 213, 0.95),
+    rgba(255, 255, 255, 0.95)
+  );
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 14px 36px rgba(27, 58, 92, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+}
+
+.conversion-main h2 {
+  margin: 10px 0 18px;
+}
+
+.conversion-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.conversion-side .tags a {
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--indigo);
+  color: var(--sable-clair);
+}
+
+.conversion-testimonials blockquote {
+  margin: 10px 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--terre-cuite);
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .conversion-card,
+  .project-conversion .conversion-card {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gallery-conversion-text h2 {
   margin-bottom: 16px;
 }
@@ -1376,6 +1427,73 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
+}
+
+/* Project detail styles */
+.project-header {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.project-info h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+}
+
+.project-category-large {
+  display: inline-block;
+  background: rgba(27, 58, 92, 0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.project-description {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+  margin-top: 10px;
+}
+
+.meta-item strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.project-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-gallery h2 {
+  margin: 18px 0;
+}
+
+@media (max-width: 900px) {
+  .project-header {
+    grid-template-columns: 1fr;
+  }
+  .project-hero-image img {
+    height: 360px;
+  }
 }
 
 .gallery-item {
