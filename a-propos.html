@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="about-page">
     <header class="header">
       <nav class="nav container">
         <a href="index.html" class="logo">
@@ -43,96 +43,159 @@
     </header>
 
     <main>
-      <br>
-      <section class="about-story section-padding">
+      <section class="hero-about">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          poster="images/hero-poster.jpg"
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-modern-architecture-building-7311/1080p.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-copy container">
+          <span class="section-tag">À PROPOS</span>
+          <h1>Nous imaginons des espaces qui traversent le temps.</h1>
+          <p class="hero-text">
+            Depuis 2018, Indigo Studio accompagne les particuliers, entreprises
+            et institutions dans la création d'espaces élégants, fonctionnels et
+            durables.
+          </p>
+          <div class="hero-actions">
+            <a href="#history" class="btn btn-primary btn-large"
+              >Découvrir notre histoire</a
+            >
+            <a href="contact.html" class="btn btn-secondary btn-large"
+              >Nous contacter</a
+            >
+          </div>
+          <button
+            class="scroll-indicator"
+            aria-label="Faire défiler vers le bas"
+          >
+            <span></span>
+          </button>
+        </div>
+      </section>
+
+      <section id="history" class="timeline section-padding">
         <div class="container">
-          <div class="about-grid">
-            <div class="about-content">
-              <span class="section-tag">Notre histoire</span>
-              <h2>
-                Une architecture <span class="highlight">ancrée</span> dans la
-                terre et la lumière
-              </h2>
-              <p>
-                Fondé en 2018 par une équipe passionnée d'architectes, notre
-                cabinet est né d'une conviction : l'architecture au Sénégal
-                mérite une expression contemporaine, ancrée dans les matériaux
-                et les savoir-faire locaux.
-              </p>
-              <p>
-                Nous croyons en une architecture qui dialogue avec son
-                environnement, qui capte la lumière naturelle et qui met en
-                valeur les matériaux bruts comme la terre, le bois et la pierre.
-              </p>
-              <div class="about-stats">
-                <div class="stat">
-                  <span class="stat-number">50+</span>
-                  <span class="stat-label">Projets réalisés</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">12</span>
-                  <span class="stat-label">Prix et distinctions</span>
-                </div>
-                <div class="stat">
-                  <span class="stat-number">100%</span>
-                  <span class="stat-label">Satisfaction clients</span>
-                </div>
+          <div class="section-header">
+            <span class="section-tag">Notre histoire</span>
+            <h2>Une trajectoire qui trace notre vision.</h2>
+          </div>
+          <div class="timeline-grid">
+            <div class="timeline-line"></div>
+            <article class="timeline-item">
+              <div class="timeline-icon">2018</div>
+              <div class="timeline-copy">
+                <h3>Création d'Indigo Studio</h3>
+                <p>
+                  Le cabinet voit le jour pour imaginer une architecture
+                  contemporaine, ancrée dans le Sénégal.
+                </p>
               </div>
-            </div>
-            <div class="about-image">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80"
-                alt="Notre équipe d'architectes"
-                loading="lazy"
-              />
-            </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-icon">2019</div>
+              <div class="timeline-copy">
+                <h3>Premières villas d'exception</h3>
+                <p>
+                  Livraison de résidences mêlant lumière, matière et confort
+                  contemporain.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-icon">2021</div>
+              <div class="timeline-copy">
+                <h3>Développement commercial</h3>
+                <p>
+                  Bureaux, boutiques et espaces publics prennent vie avec un
+                  design singulier.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-icon">2023</div>
+              <div class="timeline-copy">
+                <h3>Plus de 50 réalisations</h3>
+                <p>
+                  Un portfolio riche, pensé pour des usages mixtes et des
+                  transitions fluides.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-icon">2025</div>
+              <div class="timeline-copy">
+                <h3>Référence contemporaine</h3>
+                <p>
+                  Indigo Studio est reconnu pour son architecture sensible et
+                  responsable.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="team section-padding">
+      <section class="philosophy section-padding">
+        <div class="container philosophy-grid">
+          <div class="philosophy-image">
+            <img
+              src="https://images.unsplash.com/photo-1529429617124-020f4c4024c7?w=1200&q=80"
+              alt="Architecture contemporaine"
+              loading="lazy"
+            />
+          </div>
+          <div class="philosophy-copy">
+            <span class="section-tag">Notre philosophie</span>
+            <h2>Construire en harmonie avec notre environnement.</h2>
+            <p>
+              Nous croyons qu'une architecture réussie ne se limite pas à
+              l'esthétique. Elle dialogue avec la lumière, les matériaux et les
+              usages pour créer des lieux singuliers.
+            </p>
+            <p>
+              Un projet doit être profondément lié à son contexte, élégant dans
+              sa simplicité et robuste dans son exécution.
+            </p>
+            <blockquote>
+              « L'architecture doit être une réponse sensible aux besoins
+              d'aujourd'hui, tout en respectant demain. »
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats section-padding">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Notre équipe</span>
-            <h2>Des architectes <span class="highlight">passionnés</span></h2>
+            <span class="section-tag">Les chiffres</span>
+            <h2>Une intensité maîtrisée, une croissance mesurée.</h2>
           </div>
-          <div class="team-grid">
-            <div class="team-card">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&q=80"
-                alt="Architecte 1"
-                loading="lazy"
-              />
-              <h3>Mamadou Diallo</h3>
-              <span class="team-role">Architecte associé</span>
-              <p>
-                20 ans d'expérience dans la conception de projets résidentiels
-                et commerciaux au Sénégal.
-              </p>
-            </div>
-            <div class="team-card">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&q=80"
-                alt="Architecte 2"
-                loading="lazy"
-              />
-              <h3>Aïssa Diouf</h3>
-              <span class="team-role">Architecte urbaniste</span>
-              <p>Spécialisée en urbanisme durable et aménagement paysager.</p>
-            </div>
-            <div class="team-card">
-              <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&q=80"
-                alt="Architecte 3"
-                loading="lazy"
-              />
-              <h3>Ibrahim Sow</h3>
-              <span class="team-role">Architecte DPLG</span>
-              <p>
-                Expert en rénovation et réhabilitation du patrimoine
-                architectural.
-              </p>
-            </div>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-value">50+</span>
+              <p>Projets réalisés</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value">8</span>
+              <p>Années d'expérience</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value">98%</span>
+              <p>Clients satisfaits</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-value">15</span>
+              <p>Architectes & collaborateurs</p>
+            </article>
           </div>
         </div>
       </section>
@@ -141,55 +204,283 @@
         <div class="container">
           <div class="section-header">
             <span class="section-tag">Nos valeurs</span>
-            <h2>Ce qui nous <span class="highlight">anime</span></h2>
+            <h2>Un engagement permanent.</h2>
           </div>
           <div class="values-grid">
-            <div class="value-card">
+            <article class="value-card">
               <div class="value-icon">🏛️</div>
               <h3>Authenticité</h3>
               <p>
-                Une architecture qui raconte une histoire, ancrée dans son
-                territoire et ses matériaux.
+                Chaque projet est enraciné dans son territoire et son identité.
               </p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon">🤝</div>
-              <h3>Collaboration</h3>
-              <p>
-                Nous travaillons main dans la main avec vous pour donner vie à
-                votre vision.
-              </p>
-            </div>
-            <div class="value-card">
+            </article>
+            <article class="value-card">
               <div class="value-icon">🌱</div>
               <h3>Durabilité</h3>
               <p>
-                Des solutions architecturales respectueuses de l'environnement
-                et économes en énergie.
+                Des solutions respectueuses de l'environnement et de l'usage
+                long terme.
               </p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon">💡</div>
+            </article>
+            <article class="value-card">
+              <div class="value-icon">⚡</div>
               <h3>Innovation</h3>
               <p>
-                Nous repoussons les limites du design tout en restant fidèles à
-                nos racines.
+                Équilibre entre exigence esthétique et performance technique.
               </p>
-            </div>
+            </article>
+            <article class="value-card">
+              <div class="value-icon">🤝</div>
+              <h3>Collaboration</h3>
+              <p>
+                Nous vous accompagnons étape par étape, avec transparence et
+                exigence.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="cta-section">
+      <section class="team section-padding">
         <div class="container">
-          <div class="cta-content">
-            <h2>Vous avez un projet en tête ?</h2>
-            <p>
-              Rencontrons-nous pour discuter de vos idées et de vos besoins.
-            </p>
-            <a href="devis.html" class="btn btn-primary btn-large"
-              >Demander un devis</a
-            >
+          <div class="section-header">
+            <span class="section-tag">Notre équipe</span>
+            <h2>Une équipe dédiée à chaque détail.</h2>
+          </div>
+          <div class="team-grid">
+            <article class="team-card">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80"
+                alt="Mamadou Diallo"
+                loading="lazy"
+              />
+              <h3>Mamadou Diallo</h3>
+              <span class="team-role">Architecte associé</span>
+              <p>
+                15 ans d'expérience, spécialisé en résidences haut de gamme et
+                projets mixtes.
+              </p>
+              <a href="#" class="btn btn-secondary">Voir le profil</a>
+            </article>
+            <article class="team-card">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80"
+                alt="Aïssa Diouf"
+                loading="lazy"
+              />
+              <h3>Aïssa Diouf</h3>
+              <span class="team-role">Architecte urbaniste</span>
+              <p>
+                Spécialiste de l'urbanisme durable, elle conçoit des espaces où
+                la ville respire.
+              </p>
+              <a href="#" class="btn btn-secondary">Voir le profil</a>
+            </article>
+            <article class="team-card">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80"
+                alt="Ibrahim Sow"
+                loading="lazy"
+              />
+              <h3>Ibrahim Sow</h3>
+              <span class="team-role">Architecte DPLG</span>
+              <p>
+                Réhabilitation et patrimoine, il marie tradition et contemporain
+                avec finesse.
+              </p>
+              <a href="#" class="btn btn-secondary">Voir le profil</a>
+            </article>
+            <article class="team-card">
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80"
+                alt="Fatou Cissé"
+                loading="lazy"
+              />
+              <h3>Fatou Cissé</h3>
+              <span class="team-role">Directrice de projet</span>
+              <p>
+                Coordination chantier et qualité d'exécution pour un rendu
+                fidèle à la vision.
+              </p>
+              <a href="#" class="btn btn-secondary">Voir le profil</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Notre méthode</span>
+            <h2>Une démarche claire, de l'écoute à la livraison.</h2>
+          </div>
+          <div class="process-strip">
+            <article class="process-step">
+              <span class="process-number">1</span>
+              <h3>Écoute</h3>
+              <p>Comprendre vos ambitions et le contexte du site.</p>
+            </article>
+            <article class="process-step">
+              <span class="process-number">2</span>
+              <h3>Analyse</h3>
+              <p>Étude du site, contraintes techniques et usages.</p>
+            </article>
+            <article class="process-step">
+              <span class="process-number">3</span>
+              <h3>Conception</h3>
+              <p>Définition d'un concept architectural fort et pertinent.</p>
+            </article>
+            <article class="process-step">
+              <span class="process-number">4</span>
+              <h3>Modélisation</h3>
+              <p>Visualisation 3D pour affiner l'espace et les ambiances.</p>
+            </article>
+            <article class="process-step">
+              <span class="process-number">5</span>
+              <h3>Suivi</h3>
+              <p>Accompagnement chantier jusqu'à la livraison.</p>
+            </article>
+            <article class="process-step">
+              <span class="process-number">6</span>
+              <h3>Livraison</h3>
+              <p>Remise d'un espace prêt à vivre et durable.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section-padding">
+        <div class="container">
+          <div class="section-header section-header--wide">
+            <span class="section-tag">Galerie</span>
+            <h2>Nos réalisations en images.</h2>
+          </div>
+          <div class="gallery-grid">
+            <article class="gallery-card">
+              <img src="images/projects/1.jpg" alt="Projet 1" loading="lazy" />
+              <div class="gallery-card-overlay">
+                <p>Villa contemporaine à Dakar</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img src="images/projects/2.jpg" alt="Projet 2" loading="lazy" />
+              <div class="gallery-card-overlay">
+                <p>Maison de ville moderne</p>
+              </div>
+            </article>
+            <article class="gallery-card">
+              <img src="images/projects/3.jpg" alt="Projet 3" loading="lazy" />
+              <div class="gallery-card-overlay">
+                <p>Réhabilitation de patrimoine</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials section-padding">
+        <div class="container">
+          <div class="section-header section-header--wide">
+            <span class="section-tag">Témoignages</span>
+            <h2>Les avis de nos clients.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card active">
+              <div class="testimonial-top">
+                <img
+                  src="images/testimonial-1.jpg"
+                  alt="Sophie Ndour"
+                  loading="lazy"
+                />
+                <div>
+                  <h3>Sophie Ndour</h3>
+                  <p>Directrice de projet</p>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>
+                « Indigo Studio a transformé notre villa en un lieu d'exception,
+                moderne et chaleureux. »
+              </p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-top">
+                <img
+                  src="images/testimonial-2.jpg"
+                  alt="Kader Sy"
+                  loading="lazy"
+                />
+                <div>
+                  <h3>Kader Sy</h3>
+                  <p>CEO</p>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>
+                « Leur approche est rigoureuse, créative et parfaitement adaptée
+                à notre identité. »
+              </p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-top">
+                <img
+                  src="images/testimonial-1.jpg"
+                  alt="Aïssa Diouf"
+                  loading="lazy"
+                />
+                <div>
+                  <h3>Aïssa Diouf</h3>
+                  <p>Architecte urbaniste</p>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>
+                « Une collaboration fluide, un suivi serré, et un rendu très
+                qualitatif. »
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-section section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Zone d'intervention</span>
+            <h2>Partout au Sénégal.</h2>
+          </div>
+          <div class="map-card">
+            <div class="map-frame">
+              <img
+                src="images/senegal-map.png"
+                alt="Carte du Sénégal"
+                loading="lazy"
+              />
+            </div>
+            <div class="map-sidebar">
+              <p>
+                Nous accompagnons les projets de Dakar à la Casamance, avec une
+                attention particulière à chaque contexte local.
+              </p>
+              <div class="map-points">
+                <button class="map-point" data-label="Dakar">Dakar</button>
+                <button class="map-point" data-label="Thiès">Thiès</button>
+                <button class="map-point" data-label="Mbour">Mbour</button>
+                <button class="map-point" data-label="Saint-Louis">
+                  Saint-Louis
+                </button>
+                <button class="map-point" data-label="Saly">Saly</button>
+                <button class="map-point" data-label="Diamniadio">
+                  Diamniadio
+                </button>
+                <button class="map-point" data-label="Casamance">
+                  Casamance
+                </button>
+              </div>
+              <div class="map-tooltip" aria-live="polite">
+                Projet en cours de suivi à Dakar
+              </div>
+            </div>
           </div>
         </div>
       </section>

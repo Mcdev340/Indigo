@@ -158,4 +158,44 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// ============================
+// Interactions page À propos
+// ============================
+const aboutHistoryButton = document.querySelector(".scroll-indicator");
+if (aboutHistoryButton) {
+  aboutHistoryButton.addEventListener("click", () => {
+    const historySection = document.querySelector("#history");
+    if (historySection) {
+      historySection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
+
+const mapPoints = document.querySelectorAll(".map-point");
+const mapTooltip = document.querySelector(".map-tooltip");
+if (mapPoints.length > 0 && mapTooltip) {
+  mapPoints.forEach((point, index) => {
+    point.addEventListener("click", () => {
+      mapPoints.forEach((button) => button.classList.remove("active"));
+      point.classList.add("active");
+      mapTooltip.textContent = `Projet en cours de suivi à ${point.dataset.label}`;
+    });
+  });
+  const firstPoint = mapPoints[0];
+  if (firstPoint) {
+    firstPoint.classList.add("active");
+    mapTooltip.textContent = `Projet en cours de suivi à ${firstPoint.dataset.label}`;
+  }
+}
+
+const gallerySlides = document.querySelectorAll(".gallery-slide");
+if (gallerySlides.length > 1) {
+  let activeIndex = 0;
+  setInterval(() => {
+    gallerySlides[activeIndex].classList.remove("active");
+    activeIndex = (activeIndex + 1) % gallerySlides.length;
+    gallerySlides[activeIndex].classList.add("active");
+  }, 6000);
+}
+
 console.log("Architecture Studio - Site vitrine chargé avec succès !");
