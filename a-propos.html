@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Leaflet CSS for interactive map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
   </head>
   <body class="about-page">
     <header class="header">
@@ -44,18 +49,6 @@
 
     <main>
       <section class="hero-about">
-        <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          poster="images/hero-poster.jpg"
-        >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-modern-architecture-building-7311/1080p.mp4"
-            type="video/mp4"
-          />
-        </video>
         <div class="hero-overlay"></div>
         <div class="hero-copy container">
           <span class="section-tag">À PROPOS</span>
@@ -378,71 +371,6 @@
         </div>
       </section>
 
-      <section class="testimonials section-padding">
-        <div class="container">
-          <div class="section-header section-header--wide">
-            <span class="section-tag">Témoignages</span>
-            <h2>Les avis de nos clients.</h2>
-          </div>
-          <div class="testimonial-grid">
-            <article class="testimonial-card active">
-              <div class="testimonial-top">
-                <img
-                  src="images/testimonial-1.jpg"
-                  alt="Sophie Ndour"
-                  loading="lazy"
-                />
-                <div>
-                  <h3>Sophie Ndour</h3>
-                  <p>Directrice de projet</p>
-                </div>
-              </div>
-              <div class="stars">★★★★★</div>
-              <p>
-                « Indigo Studio a transformé notre villa en un lieu d'exception,
-                moderne et chaleureux. »
-              </p>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <img
-                  src="images/testimonial-2.jpg"
-                  alt="Kader Sy"
-                  loading="lazy"
-                />
-                <div>
-                  <h3>Kader Sy</h3>
-                  <p>CEO</p>
-                </div>
-              </div>
-              <div class="stars">★★★★★</div>
-              <p>
-                « Leur approche est rigoureuse, créative et parfaitement adaptée
-                à notre identité. »
-              </p>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <img
-                  src="images/testimonial-1.jpg"
-                  alt="Aïssa Diouf"
-                  loading="lazy"
-                />
-                <div>
-                  <h3>Aïssa Diouf</h3>
-                  <p>Architecte urbaniste</p>
-                </div>
-              </div>
-              <div class="stars">★★★★★</div>
-              <p>
-                « Une collaboration fluide, un suivi serré, et un rendu très
-                qualitatif. »
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section class="map-section section-padding">
         <div class="container">
           <div class="section-header">
@@ -451,11 +379,7 @@
           </div>
           <div class="map-card">
             <div class="map-frame">
-              <img
-                src="images/senegal-map.png"
-                alt="Carte du Sénégal"
-                loading="lazy"
-              />
+              <div id="map" role="region" aria-label="Carte du Sénégal"></div>
             </div>
             <div class="map-sidebar">
               <p>
@@ -538,6 +462,8 @@
       </div>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

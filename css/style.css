@@ -768,6 +768,16 @@ h3 {
   align-items: center;
   color: var(--blanc);
   overflow: hidden;
+  background-image: url("../img4/hero-about-bg.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .hero-about {
+    background-attachment: fixed;
+  }
 }
 
 .hero-about::before {
