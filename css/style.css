@@ -768,7 +768,7 @@ h3 {
   align-items: center;
   color: var(--blanc);
   overflow: hidden;
-  background-image: url("../img4/hero-about-bg.jpg");
+  background-image: url("../images/img4.png");
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -975,6 +975,9 @@ h3 {
 }
 
 .stat-card {
+  background: var(--sable-clair);
+  border: 1px solid rgba(27, 58, 92, 0.08);
+  box-shadow: 0 16px 40px rgba(27, 58, 92, 0.06);
   text-align: center;
 }
 
@@ -1892,10 +1895,11 @@ h3 {
 
 .team-card {
   text-align: center;
-  background: var(--blanc);
+  background: var(--sable-clair);
   padding: 32px 24px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(27, 58, 92, 0.08);
+  box-shadow: 0 16px 40px rgba(27, 58, 92, 0.06);
 }
 
 .team-card img {
