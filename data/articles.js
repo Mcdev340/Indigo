@@ -7,8 +7,7 @@ const articles = [
     categorie: "Tendances",
     date: "12 janvier 2026",
     tempsLecture: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/L'-architecture-durable-au-Sénégal.png",
     excerpt:
       "Découvrez comment l'architecture contemporaine sénégalaise associe savoir-faire local et performance environnementale pour créer des espaces durables.",
     content: `
@@ -30,8 +29,7 @@ const articles = [
     categorie: "Conseils",
     date: "5 janvier 2026",
     tempsLecture: "7 min",
-    image:
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Rénover-le-patrimoine-colonial.png",
     excerpt:
       "À Saint-Louis et à Gorée, la rénovation du patrimoine colonial offre un équilibre délicat entre mémoire, modernité et confort contemporains.",
     content: `
@@ -54,7 +52,7 @@ const articles = [
     date: "28 décembre 2025",
     tempsLecture: "4 min",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
+      "images/blog/Les-tendances-architecturales-qui-façonneront-2026-au-Sénégal.png",
     excerpt:
       "En 2026, l'architecture sénégalaise se dessine autour de la sobriété, du confort climatique et de l'ancrage territorial.",
     content: `
@@ -79,7 +77,7 @@ const articles = [
     date: "15 décembre 2025",
     tempsLecture: "6 min",
     image:
-      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=600&h=400&fit=crop&q=80",
+      "images/blog/Pourquoi-les-matériaux-locaux-sont-l'-avenir-de-l'-architecture-sénégalaise.png",
     excerpt:
       "Le banco, la latérite et le bois sont bien plus que des matériaux : ce sont des leviers de durabilité, de confort et d'identité.",
     content: `
@@ -103,8 +101,7 @@ const articles = [
     categorie: "Chantiers",
     date: "2 décembre 2025",
     tempsLecture: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Les-villas-côtières-de-Dakar.png",
     excerpt:
       "À Dakar, la maison côtière se construit selon un équilibre subtil entre vue panoramique, ventilation naturelle et résistance au climat marin.",
     content: `
@@ -127,8 +124,7 @@ const articles = [
     categorie: "Chantiers",
     date: "18 novembre 2025",
     tempsLecture: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Maison-de-famille-à-Saint-Louis.png",
     excerpt:
       "À Saint-Louis, la maison familiale moderne s'inspire du modèle traditionnel pour mieux vivre dans le climat local tout en répondant aux besoins contemporains.",
     content: `
@@ -151,8 +147,7 @@ const articles = [
     categorie: "Institutionnel",
     date: "9 novembre 2025",
     tempsLecture: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Des-écoles-publiques-durables-à-Thiès.png",
     excerpt:
       "Les nouvelles constructions scolaires à Thiès démontrent qu'une architecture publique peut être à la fois fonctionnelle, lumineuse et profondément sensible au climat.",
     content: `
@@ -175,8 +170,7 @@ const articles = [
     categorie: "Rénovation",
     date: "25 octobre 2025",
     tempsLecture: "7 min",
-    image:
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Rénovation-du-centre-ville-de-Touba.png",
     excerpt:
       "À Touba, les projets de réhabilitation urbaine montrent que la modernisation peut aller de pair avec le respect des formes historiques et sociales.",
     content: `
@@ -198,8 +192,7 @@ const articles = [
     categorie: "Urbanisme",
     date: "12 octobre 2025",
     tempsLecture: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Diamniadio.png",
     excerpt:
       "À Diamniadio, les nouvelles opérations urbaines s'organisent autour des espaces publics, des mobilités douces et de la qualité de vie.",
     content: `
@@ -222,8 +215,7 @@ const articles = [
     categorie: "Process",
     date: "4 octobre 2025",
     tempsLecture: "8 min",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Le-chantier-sénégalais.png",
     excerpt:
       "Les chantiers sénégalais illustrent bien la richesse d'une architecture qui associe savoir-faire artisanal, maîtrise technique et sens du détail.",
     content: `
@@ -246,8 +238,7 @@ const articles = [
     categorie: "Tendances",
     date: "30 septembre 2025",
     tempsLecture: "5 min",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Architecture-en-plein-aire.png",
     excerpt:
       "À Dakar, les maisons contemporaines privilégient les terrasses, cours intérieures et vues panoramiques pour mieux vivre avec le climat et le paysage.",
     content: `
@@ -270,8 +261,7 @@ const articles = [
     categorie: "Chantiers",
     date: "24 septembre 2025",
     tempsLecture: "6 min",
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop&q=80",
+    image: "images/blog/Maison-moderne-à-Rufisque.png",
     excerpt:
       "À Rufisque, la maison moderne s'appuie sur des lignes épurées, des matériaux résistants et un confort adapté au climat urbain.",
     content: `

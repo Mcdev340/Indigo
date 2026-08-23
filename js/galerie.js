@@ -5,59 +5,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const galleryHeroSlider = document.getElementById("gallery-hero-slider");
   const galleryGrid = document.getElementById("gallery-grid");
 
-  // Tableau centralisé des 10 images du hero de la galerie.
   const gallerySlides = [
-    {
-      src: "images/gallery/1.jpg",
-      alt: "Villa contemporaine en bord de mer",
-      caption: "Villa Somone",
-    },
-    {
-      src: "images/gallery/2.jpg",
-      alt: "Bureau d'architecture minimaliste",
-      caption: "Bureau Dakar",
-    },
-    {
-      src: "images/gallery/3.jpg",
-      alt: "Maison coloniale rénovée",
-      caption: "Rénovation patrimoniale",
-    },
-    {
-      src: "images/gallery/4.jpg",
-      alt: "Complexe sportif moderne",
-      caption: "Complexe sportif",
-    },
-    {
-      src: "images/gallery/5.jpg",
-      alt: "Villa contemporaine avec vue sur l'océan",
-      caption: "Villa Ngor",
-    },
-    {
-      src: "images/gallery/6.jpg",
-      alt: "Immeuble de bureaux premium",
-      caption: "Diamniadio",
-    },
-    {
-      src: "images/gallery/7.jpg",
-      alt: "Projet architectural en plein air",
-      caption: "Projet urbain",
-    },
-    {
-      src: "images/gallery/8.jpg",
-      alt: "Façade élégante en matériaux naturels",
-      caption: "Résidence haut de gamme",
-    },
-    {
-      src: "images/gallery/9.jpg",
-      alt: "Espace intérieur architectural lumineux",
-      caption: "Intérieur contemporain",
-    },
-    {
-      src: "images/gallery/10.jpg",
-      alt: "Architecture contemporaine en site naturel",
-      caption: "Architecture paysagère",
-    },
-  ].slice(0, 10);
+    "Abidjan.png",
+    "BCEAO.png",
+    "Cote-D'ivoire.png",
+    "Dakar - Porte du 3ème Millénaire.png",
+    "Dakar Arena.png",
+    "Dakar inaugure son Musée des Civilisations noires.png",
+    "Dakar, Senegal.png",
+    "Dakar-house.png",
+    "Dakar.png",
+    "Gare de Dakar - Carte - Mapcarta.png",
+    "Goree island 🏝️🇸🇳.png",
+    "House of Slaves _ Goree Island.png",
+    "L’église Epiphanie du Seigneur de Nianing (Sénégal) - EGF.png",
+    "Maison coloniale _ un style entre héritage et vision contemporaine.png",
+    "Maison-de-Moussa.png",
+    "Mali.png",
+    "Monument Sénégal 🇸🇳🔥❤❤.png",
+    "Musee-Historique.png",
+    "Photo Stock Monument place de l’obélisque Dakar _ Adobe Stock.png",
+    "Photo Stock Mosquée de la divinité à ouakam Dakar Sénégal _ Adobe Stock.png",
+    "PYRAMIDE D’ABIDJAN.png",
+    "Sandaga.png",
+    "Senegal - Cathedral of Our Lady of Victories in Dakar.png",
+    "Senegal - Grand théâtre National-Dakar.png",
+    "Visiter le Mali - Place de l'indépendance (Bamako).png",
+  ].map((filename) => ({
+    src: `images/galerie/${filename}`,
+    alt: "Image de la galerie Indigo Studio",
+  }));
 
   if (galleryHeroSlider) {
     const slidesMarkup = gallerySlides
@@ -65,9 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         (slide, index) => `
           <figure class="gallery-hero-slide ${index === 0 ? "is-active" : ""}" aria-hidden="${index === 0 ? "false" : "true"}">
             <img src="${slide.src}" alt="${slide.alt}" loading="${index === 0 ? "eager" : "lazy"}" />
-            <figcaption class="gallery-hero-caption">
-              <span>${slide.caption}</span>
-            </figcaption>
           </figure>
         `,
       )
@@ -180,27 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!galleryGrid) return;
 
-  // Récupérer toutes les images de tous les projets
-  const allImages = [];
-  projets.forEach((projet) => {
-    if (projet.images && projet.images.length > 0) {
-      projet.images.forEach((img) => {
-        allImages.push({
-          src: img,
-          alt: projet.titre,
-          projet: projet.titre,
-        });
-      });
-    }
-    // Ajouter l'image principale si elle n'est pas déjà dans les images
-    if (projet.image && !allImages.some((i) => i.src === projet.image)) {
-      allImages.push({
-        src: projet.image,
-        alt: projet.titre,
-        projet: projet.titre,
-      });
-    }
-  });
+  const allImages = gallerySlides;
 
   let currentIndex = 0;
 
