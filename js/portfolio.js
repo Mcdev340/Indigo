@@ -3,28 +3,27 @@
 // ============================
 document.addEventListener("DOMContentLoaded", function () {
   const portfolioGrid = document.getElementById("portfolio-grid");
-  if (!portfolioGrid) return;
+  if (portfolioGrid) {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    let currentFilter = "all";
 
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  let currentFilter = "all";
+    function renderProjects(categorie) {
+      const projetsFiltres = getProjetsByCategorie(categorie);
+      portfolioGrid.innerHTML = "";
 
-  function renderProjects(categorie) {
-    const projetsFiltres = getProjetsByCategorie(categorie);
-    portfolioGrid.innerHTML = "";
-
-    if (projetsFiltres.length === 0) {
-      portfolioGrid.innerHTML = `
+      if (projetsFiltres.length === 0) {
+        portfolioGrid.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
                     <p>Aucun projet dans cette catégorie pour le moment.</p>
                 </div>
             `;
-      return;
-    }
+        return;
+      }
 
-    projetsFiltres.forEach((projet) => {
-      const card = document.createElement("div");
-      card.className = "project-card";
-      card.innerHTML = `
+      projetsFiltres.forEach((projet) => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        card.innerHTML = `
                 <a href="projet-detail.html?slug=${projet.slug}">
                     <div class="project-card-image">
                         <img src="${projet.image}" alt="${projet.titre}" loading="lazy">
@@ -36,22 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </a>
             `;
-      portfolioGrid.appendChild(card);
+        portfolioGrid.appendChild(card);
+      });
+    }
+
+    // Filtrage
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+        currentFilter = this.dataset.filter;
+        renderProjects(currentFilter);
+      });
     });
+
+    // Chargement initial
+    renderProjects("all");
   }
-
-  // Filtrage
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      this.classList.add("active");
-      currentFilter = this.dataset.filter;
-      renderProjects(currentFilter);
-    });
-  });
-
-  // Chargement initial
-  renderProjects("all");
 
   // ============================
   // Détail d'un projet (projet-detail.html)
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ? projet.images
                 .map(
                   (img) => `
-                        <div class="gallery-item" onclick="openLightbox('${img}')">
+                        <div class="gallery-item">
                             <img src="${img}" alt="${projet.titre}" loading="lazy">
                         </div>
                     `,
@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         projectDetail.innerHTML = `
                     <div class="container">
+            <a href="realisations.html" class="project-back-link">← Retour aux réalisations</a>
                         <div class="project-header">
                             <div class="project-hero-image">
                                 <img src="${projet.image}" alt="${projet.titre}" loading="lazy">
