@@ -131,38 +131,49 @@ h3 {
    Buttons
    ============================ */
 .btn {
-  display: inline-block;
-  padding: 14px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 18px 28px;
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 1rem;
-  border: none;
-  border-radius: var(--border-radius);
+  font-size: 1.02rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   cursor: pointer;
   transition: var(--transition);
   text-align: center;
+  background: transparent;
+  color: var(--indigo);
+  letter-spacing: -0.02em;
 }
 
 .btn-primary {
   background: var(--terre-cuite);
   color: var(--sable-clair);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 24px rgba(193, 101, 47, 0.24);
 }
 
 .btn-primary:hover {
   background: #a8521f;
+  border-color: #a8521f;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(193, 101, 47, 0.3);
+  box-shadow: 0 14px 26px rgba(193, 101, 47, 0.28);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--indigo);
-  border: 2px solid var(--indigo);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--blanc);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
-  background: var(--indigo);
-  color: var(--sable-clair);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--indigo);
+  border-color: rgba(255, 255, 255, 0.96);
+  transform: translateY(-2px);
 }
 
 .btn-large {
@@ -292,49 +303,77 @@ h3 {
    Hero
    ============================ */
 .hero {
-  padding-top: 120px;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
   position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  background-color: var(--sable-clair);
-  background-image: none;
+  background-image: url("../images/img4.png");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  color: var(--blanc);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 15, 20, 0.76) 0%,
+    rgba(10, 15, 20, 0.54) 38%,
+    rgba(10, 15, 20, 0.24) 68%,
+    rgba(10, 15, 20, 0.08) 100%
+  );
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  align-items: flex-start;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 140px 20px 90px;
 }
 
 .hero-kicker {
   display: inline-block;
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2vw, 2rem);
-  color: var(--indigo);
-  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(245, 231, 215, 0.82);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  transform: rotate(-2deg);
-  transform-origin: left center;
+  margin-bottom: 22px;
 }
 
 .hero-text {
-  width: 100%;
+  width: min(100%, 690px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-text h1 {
   margin: 0;
-  font-size: clamp(3.2rem, 8vw, 9rem);
-  line-height: 0.9;
+  font-size: clamp(4rem, 6vw, 7rem);
+  line-height: 0.86;
   letter-spacing: -0.06em;
-  color: var(--indigo);
-  font-weight: 700;
-  text-transform: lowercase;
+  color: rgba(247, 242, 234, 0.98);
+  font-weight: 600;
+  text-transform: none;
+  max-width: 560px;
+}
+
+.hero-lead {
+  max-width: 650px;
+  margin-top: 26px;
+  color: rgba(242, 232, 213, 0.9);
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.55;
+  font-weight: 400;
 }
 
 .hero-title-line {
@@ -342,52 +381,60 @@ h3 {
 }
 
 .hero-title-line--accent {
-  color: var(--indigo);
-}
-
-.hero-intro {
-  max-width: 1100px;
-  font-size: clamp(1rem, 1.8vw, 1.28rem);
-  line-height: 1.6;
-  color: #3a3a3a;
-  margin-top: 10px;
-  font-weight: 400;
+  color: rgba(247, 242, 234, 0.98);
 }
 
 .hero-actions {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
+  margin-top: 32px;
 }
 
 .hero-image {
-  width: min(82%, 1200px);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 18px 36px rgba(28, 35, 44, 0.12);
-  margin-top: 6px;
+  display: none;
 }
 
-.hero-image img {
-  width: 100%;
-  height: min(72vw, 700px);
-  min-height: 420px;
-  object-fit: cover;
-  transition: var(--transition);
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: min(100%, 700px);
+  margin-top: 58px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(242, 232, 213, 0.28);
 }
 
-.hero-image:hover img {
-  transform: scale(1.03);
+.hero-proof-item {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding-right: 12px;
+}
+
+.hero-proof-item + .hero-proof-item {
+  border-left: 1px solid rgba(242, 232, 213, 0.18);
+  padding-left: 18px;
+}
+
+.hero-proof strong {
+  color: var(--sable-clair);
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3vw, 3.3rem);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.hero-proof span {
+  color: rgba(242, 232, 213, 0.8);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
 }
 
 .hero-pattern {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(180deg, transparent, rgba(193, 101, 47, 0.05));
-  z-index: 1;
+  display: none;
 }
 
 /* ============================
@@ -468,6 +515,77 @@ h3 {
   .approach-detail-image {
     order: -1;
   }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-content {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+
+  .hero-text {
+    width: min(100%, 620px);
+  }
+
+  .hero-proof {
+    width: min(100%, 620px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 82vh;
+  }
+
+  .hero-content {
+    padding: 110px 20px 52px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 16px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-text h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 42px;
+  }
+
+  .hero-proof-item + .hero-proof-item {
+    border-left: none;
+    border-top: 1px solid rgba(242, 232, 213, 0.18);
+    padding-left: 0;
+    padding-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .approach-card {
@@ -494,6 +612,135 @@ h3 {
 
 .approach-card p {
   color: #666;
+}
+
+/* ============================
+   Services and journal
+   ============================ */
+.services {
+  background: var(--indigo);
+  color: var(--sable-clair);
+}
+
+.services h2,
+.services h3 {
+  color: var(--sable-clair);
+}
+
+.services-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.services-heading .section-tag {
+  color: #f1c78d;
+  border-color: rgba(241, 199, 141, 0.5);
+}
+
+.services-heading p {
+  max-width: 430px;
+  color: rgba(242, 232, 213, 0.72);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(242, 232, 213, 0.24);
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 32px 28px;
+  background: var(--indigo);
+  border-top: 4px solid transparent;
+}
+
+.service-card--featured {
+  background: #244a70;
+  border-top-color: var(--terre-cuite);
+}
+
+.service-number {
+  display: block;
+  margin-bottom: 54px;
+  color: #f1c78d;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+}
+
+.service-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.service-card p {
+  min-height: 54px;
+  color: rgba(242, 232, 213, 0.72);
+  line-height: 1.65;
+}
+
+.service-card .text-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #f1c78d;
+}
+
+.home-journal {
+  background: #f8f3eb;
+}
+
+.home-journal-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.home-journal-layout > div > p {
+  max-width: 420px;
+  margin: 18px 0 24px;
+  color: #5c5a57;
+  line-height: 1.75;
+}
+
+.text-link {
+  color: var(--terre-cuite);
+  font-weight: 600;
+}
+
+.journal-feature {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 34px;
+  background:
+    linear-gradient(180deg, rgba(27, 58, 92, 0.08), rgba(27, 58, 92, 0.92)),
+    url("../images/blog/L'-architecture-durable-au-Sénégal.png") center / cover;
+  color: var(--sable-clair);
+  box-shadow: 0 18px 42px rgba(27, 58, 92, 0.14);
+}
+
+.journal-feature-label,
+.journal-feature-link {
+  color: #f1c78d;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-feature h3 {
+  max-width: 620px;
+  margin: 12px 0 28px;
+  color: var(--sable-clair);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
 }
 
 /* ============================
@@ -2928,6 +3175,78 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(3.3rem, 15vw, 5.4rem);
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-image img {
+    height: 58vw;
+    min-height: 260px;
+  }
+
+  .hero-image-note {
+    right: 12px;
+    bottom: 12px;
+    min-width: 160px;
+    padding: 12px 14px;
+  }
+
+  .hero-proof {
+    gap: 18px;
+    justify-content: space-between;
+  }
+
+  .hero-proof span {
+    font-size: 0.66rem;
+  }
+
+  .services-heading,
+  .home-journal-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .services-heading {
+    margin-bottom: 32px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 0;
+  }
+
+  .service-number {
+    margin-bottom: 28px;
+  }
+
+  .service-card p {
+    min-height: 0;
+  }
+
+  .journal-feature {
+    min-height: 280px;
+    padding: 24px;
+  }
+
   .gallery-hero {
     height: 55vh;
     min-height: 420px;
